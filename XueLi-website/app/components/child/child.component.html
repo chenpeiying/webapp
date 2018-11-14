@@ -1,0 +1,20 @@
+
+<!-- <input type="text" [(ngModel)]="username" (keydown)="addTodo($event)"> -->
+<p>这是子组件的列表</p>
+<h3>正在进行:<span>{{todolist.length}}</span></h3>  
+    <ul>
+        <li *ngFor='let item of todolist ;let i=index;' >   
+            <input type="checkbox" (click)="changeTodo(i,true)" >
+            {{item.username}}
+            <button (click)='deleteTodo(i,true)'>删除</button>
+        </li>
+    </ul>
+    <h3>已经完成: <span>{{donelist.length}}</span></h3> 
+    <ul>
+        <li *ngFor='let item of donelist ;let i=index;' >  
+          <input type="checkbox" (click)="changeTodo(i,false)" >
+            {{item.username}}
+            <button (click)='deleteTodo(i,false)'>删除</button>
+        </li>
+    </ul>
+    
